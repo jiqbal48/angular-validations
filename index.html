@@ -1,1 +1,21 @@
-<h1>hello mars</h1>
+<body ng-app='mainModule' style='background-color: rgb(7, 7, 37); color:limegreen;'>
+
+    <!-- um.. some important things to know
+    1. to validation on the fields, they need to be in a form. i guess.
+    2. the validity will change from true to false. use this boolean flag to do ur error showing.
+    3. access the validity of a field like this: someFormId.someFieldId.$valid -> true/false
+    -->
+
+
+    <div ng-controller='sectionController'>
+        <p> kinda important section of the app</p>
+
+        <form name='coolNameForForm'>
+            <input name='phoneField' type="text" ng-model='fakeSSN' ng-minlength='absoluteMinimumCharacterRequirement' />
+        </form>
+
+        <span class='errorMsg' style='color:olivedrab; display:block;'> min # of chars:{{absoluteMinimumCharacterRequirement}}  is valid: {{coolNameForForm.phoneField.$valid}} </span>
+    </div>
+
+    <script src='./src/index.js'></script>
+</body>
